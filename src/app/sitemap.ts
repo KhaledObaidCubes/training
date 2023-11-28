@@ -4,6 +4,7 @@ import { sessionRoutes } from 'cubes-ui'
 const Index = () => import('./presentation/pages/index/index.vue')
 const user = () => import('./presentation/pages/user/index.vue')
 const calc = () => import('./presentation/pages/calc/index.vue')
+const myModal = () => import('./presentation/pages/my-modal/index.vue')
 
 const indexRoute = {
   path: '/',
@@ -34,10 +35,21 @@ const calcRoute = {
   }
 }
 
+const modalRoute = {
+  path: '/my-modal',
+  name: 'My Modal',
+  component: myModal,
+  meta: {
+    title: { en: 'modal', ar: 'modal' },
+    transition: 'slide'
+  }
+}
+
 const routes = [
   indexRoute,
   userRoute,
   calcRoute,
+  modalRoute,
   ...sessionRoutes,
   //todo: add your routes here..
   {

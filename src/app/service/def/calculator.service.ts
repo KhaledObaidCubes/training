@@ -8,7 +8,7 @@ import { Calculator } from '@/app/domain/def/calculator'
 @Service(IoCLevelsEnum.DEV_2, serviceMap.CalculatorService.key)
 class CalculatorService implements ICalculatorService {
   public readonly id: string = serviceMap.CalculatorService.key
-  public dc = new DataController(Calculator, { leftSide: '', rightSide: '', calcResult: '', operandSympole: '', calculationHistory: ['0'] })
+  public dc = new DataController(Calculator, { leftSide: '', rightSide: '', calcResult: '0', operandSympole: '', calculationHistory: ['0'] })
 
   //this function will be called on every button clciked as a start point
   //and it will return the buttons type wither it is number(true) or an operand(false)
@@ -82,10 +82,11 @@ class CalculatorService implements ICalculatorService {
 
     //the first two if statements are handle the special C and ⇦ chars
     if (input == 'C') {
-      this.dc.model.calcResult = '0'
-      this.dc.model.leftSide = ''
-      this.dc.model.rightSide = ''
-      this.dc.model.operandSympole = ''
+      // this.dc.model.calcResult = '0'
+      // this.dc.model.leftSide = ''
+      // this.dc.model.rightSide = ''
+      // this.dc.model.operandSympole = ''
+      this.dc.model.deserialize({ leftSide: '0', rightSide: '', calcResult: '0', operandSympole: '', calculationHistory: ['0'] })
       //reset all variables and wait for the new input( C special charachter)
     } else if (input == '⇦') {
       //remove last input from the equation (⇦ special charachter)
