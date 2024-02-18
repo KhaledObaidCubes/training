@@ -9,5 +9,5 @@ export type TModalManagerAction<T extends keyof TModalMap> = Promise<TNoNext<TOp
 interface IAppService extends ICubesAppService {
   application: TApplication
 }
- 
+
 export type { IAppService }

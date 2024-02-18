@@ -4,6 +4,8 @@ import { sessionRoutes } from 'cubes-ui'
 const Index = () => import('./presentation/pages/index/index.vue')
 const user = () => import('./presentation/pages/user/index.vue')
 const calc = () => import('./presentation/pages/calc/index.vue')
+const customBtn = () => import('./presentation/pages/cutom-button/index.vue')
+const mokeAPI = () => import('./presentation/pages/custom-table/custom-table.vue')
 const myModal = () => import('./presentation/pages/my-modal/index.vue')
 
 const indexRoute = {
@@ -35,12 +37,31 @@ const calcRoute = {
   }
 }
 
-const modalRoute = {
-  path: '/my-modal',
-  name: 'My Modal',
-  component: myModal,
+// const modalRoute = {
+//   path: '/my-modal',
+//   name: 'My Modal',
+//   component: myModal,
+//   meta: {
+//     title: { en: 'modal', ar: 'modal' },
+//     transition: 'slide'
+//   }
+// }
+
+const customBTNRoute = {
+  path: '/custom-btn',
+  name: 'custom btn',
+  component: customBtn,
   meta: {
-    title: { en: 'modal', ar: 'modal' },
+    title: { en: 'custom button', ar: 'زر تلقائي' },
+    transition: 'slide'
+  }
+}
+const mokeDataRoute = {
+  path: '/moke-data',
+  name: 'mock data',
+  component: mokeAPI,
+  meta: {
+    title: { en: 'data', ar: 'بيانات' },
     transition: 'slide'
   }
 }
@@ -49,7 +70,9 @@ const routes = [
   indexRoute,
   userRoute,
   calcRoute,
-  modalRoute,
+  // modalRoute,
+  customBTNRoute,
+  mokeDataRoute,
   ...sessionRoutes,
   //todo: add your routes here..
   {

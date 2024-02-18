@@ -13,14 +13,11 @@ import { serviceMap } from '../../../service'
 class AppService extends AppServiceBase implements IAppService {
   public readonly id: string = serviceMap.AppService.key
   application!: TApplication
- 
- 
+
   @Inject() ModalManager!: IModalManager<TModalMap>
   protected createApp(config: Partial<TApplication>, state?: TApplication['state']) {
     this.application = new Application({ config, state } as Partial<TApplication>)
   }
-
-   
 }
 
-export default  AppService
+export default AppService

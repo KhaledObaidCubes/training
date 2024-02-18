@@ -15,12 +15,14 @@ const serviceMap = {
   //todo: add your application service keys/config here
   //MyService: { key: 'MyService', config: {} },
   UserFormService: { key: 'UserFormService', config: {} },
-  CalculatorService: { key: 'CalculatorService', config: {} }
+  CalculatorService: { key: 'CalculatorService', config: {} },
+  CustomTableService: { key: 'CustomTableService', config: {} }
 }
 const repositoryMap = {
   //todo: add your application repository keys/config here
   //MyRepository: { key: 'MyRepository', config: {} },
-  UserFormRepository: { key: 'UserFormRepository', config: {} }
+  UserFormRepository: { key: 'UserFormRepository', config: {} },
+  CustomTableRepository: { key: 'CustomTableRepository', config: {} }
 }
 type TrainingServiceMap = typeof serviceMap
 export { services, serviceMap, repositoryMap }

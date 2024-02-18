@@ -82,10 +82,6 @@ class CalculatorService implements ICalculatorService {
 
     //the first two if statements are handle the special C and ⇦ chars
     if (input == 'C') {
-      // this.dc.model.calcResult = '0'
-      // this.dc.model.leftSide = ''
-      // this.dc.model.rightSide = ''
-      // this.dc.model.operandSympole = ''
       this.dc.model.deserialize({ leftSide: '0', rightSide: '', calcResult: '0', operandSympole: '', calculationHistory: ['0'] })
       //reset all variables and wait for the new input( C special charachter)
     } else if (input == '⇦') {
@@ -101,7 +97,6 @@ class CalculatorService implements ICalculatorService {
         this.dc.model.calculationHistory.push(`${this.dc.model.leftSide} ${this.dc.model.operandSympole} ${this.dc.model.rightSide}`)
         this.dc.model.leftSide = String(this.getResult(this.dc.model.leftSide, this.dc.model.rightSide, this.dc.model.operandSympole))
         this.dc.model.rightSide = ''
-        console.log(`${this.dc.model.leftSide}---- ${this.dc.model.rightSide}---${this.dc.model.operandSympole}`)
       }
       //if the operand was = don't assigne it to operand variable
       input != '=' ? (this.dc.model.operandSympole = input) : (this.dc.model.operandSympole = '')
@@ -110,7 +105,6 @@ class CalculatorService implements ICalculatorService {
     this.dc.model.operandSympole == '='
       ? (this.dc.model.calcResult = `${this.dc.model.leftSide}`)
       : (this.dc.model.calcResult = `${this.dc.model.leftSide} ${this.dc.model.operandSympole} ${this.dc.model.rightSide}`)
-    //this.historyLog(this.dc.model.calculationHistory)[(this.dc.model.leftSide, this.dc.model.rightSide, this.dc.model.operandSympole)]
   }
   dispose(): void {
     throw new Error('Method not implemented.')
